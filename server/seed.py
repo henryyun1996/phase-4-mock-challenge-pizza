@@ -29,7 +29,7 @@ with app.app_context():
     california = Pizza(name = "Melanie", ingredients = "Dough, Sauce, Ricotta, Red peppers, Mustard")
     pizzas = [cheese, pepperoni, california]
 
-    print("Creating RestaurantPizza...")
+    print("Creating Restaurant_Pizza...")
 
     pr1 = RestaurantPizza(restaurant = shack, pizza = cheese, price = 1)
     pr2 = RestaurantPizza(restaurant = bistro, pizza  = pepperoni, price = 4)

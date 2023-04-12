@@ -23,11 +23,11 @@ class TestApp:
             db.session.commit()
             response = app.test_client().post(
                 '/restaurant_pizzas',
-                data={
+                data=json.dumps({
                     "price": 3,
                     "pizza_id": pizza.id,
                     "restaurant_id": restaurant.id,
-                }
+                })
             )
 
             rf = RestaurantPizza.query.filter_by(restaurant=restaurant).first()
@@ -117,11 +117,11 @@ class TestApp:
             db.session.commit()
             response = app.test_client().post(
                 '/restaurant_pizzas',
-                data={
+                data=json.dumps({
                     "price": -1,
                     "pizza_id": pizza.id,
                     "restaurant_id": restaurant.id,
-                }
+                })
             ).json
 
             assert response['error'] == "Invalid input"
